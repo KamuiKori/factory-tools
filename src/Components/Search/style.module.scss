@@ -1,0 +1,15 @@
+.inputSearch{
+  box-sizing: border-box;
+  border: 1px solid #b6b6b6;
+  height:51px ;
+  padding-left: 15px;
+  border-radius:10px;
+  font-size: 16px;
+  outline: none;
+  width: 400px;
+  transition: .15s ease-in-out;
+}
+.inputSearch:focus{
+  border: 2px solid #b6b6b6;
+
+}

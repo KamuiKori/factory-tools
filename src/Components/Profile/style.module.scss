@@ -1,0 +1,16 @@
+.profileContent{
+    display: flex;
+    justify-content: flex-start;
+}
+.leftSide img  {
+    max-width: 200px;
+    margin-right: 100px;
+}
+.description{
+    max-width: 300px;
+    width: 100%;
+}
+.description>*{
+    display: flex;
+    justify-content: space-between;
+}

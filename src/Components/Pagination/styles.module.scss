@@ -1,0 +1,33 @@
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  li{
+    display: flex;
+    margin-right: 10px;
+    border-radius: 50%;
+    &:global.selected{
+      background: #666;
+      a{
+        color: #fff;
+      }
+    }
+  }
+  li:hover{
+    background: #666;
+    transition: .2s ease-in;
+    a{
+      color: #fff;
+    }
+  }
+}
+a{
+  display: flex;
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  border:1px solid #666;
+  border-radius: 50%;
+  cursor: pointer;
+}
