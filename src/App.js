@@ -12,6 +12,7 @@ import Home from "./pages/home";
 import NotFoundBlock from "./Components/NotFoundBlock";
 import Profile from "./Components/Profile";
 import React from "react";
+import {store} from './redux/store'
 
 export const SearchContext = React.createContext('')
 function App() {

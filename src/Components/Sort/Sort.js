@@ -1,14 +1,19 @@
 import React from "react";
 import items from "../../assets/db.json";
 import ItemBlock from "../ItemBlock/ItemBlock";
+import {useSelector,useDispatch} from "react-redux";
+import {setSortType} from "../../redux/slices/filterSlice";
 
-function Sort({sortValue, onClickCategory}) {
+function Sort() {
+
+    const dispatch = useDispatch();
+    const sort = useSelector(state=>state.filter.sort)
 
     const [open, setOpen] = React.useState(false);
     const list = [{name: 'Алфавиту', sortProperty: 'title'}, {name: "Количеству", sortProperty: "count"}];
 
-    const onClickListItem = (i) => {
-        onClickCategory(i);
+    const onClickListItem = (obj) => {
+        dispatch(setSortType(obj))
         setOpen(false);
     }
 
@@ -28,7 +33,7 @@ function Sort({sortValue, onClickCategory}) {
                     />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick={() => setOpen(!open)}>{sortValue.name}</span>
+                <span onClick={() => setOpen(!open)}>{sort.name}</span>
             </div>
             {
                 open && (
@@ -37,7 +42,7 @@ function Sort({sortValue, onClickCategory}) {
                             {
                                 list.map((obj, index) => (
                                         <li key={index} onClick={() => onClickListItem(obj)}
-                                            className={sortValue.sortProperty === obj.sortProperty ? "active" : ""}>
+                                            className={sort.sortProperty === obj.sortProperty ? "active" : ""}>
                                             {obj.name}
                                         </li>
                                     )
