@@ -6,7 +6,13 @@ import styles from './style.module.scss'
 import Search from "../Search";
 
 function Header() {
-    let userNameValue = "Имя";
+    var link = "";
+    if(localStorage.getItem("logged") === "true"){
+        link = "/profile"
+    }
+    else{
+        link = "/login"
+    }
     return (
         <div className="header">
             <div className="container">
@@ -20,9 +26,7 @@ function Header() {
                 </Link>
                 <Search/>
                 <div className="header__cart">
-                    <Link to="/profile" className="button button--cart">
-                        <span className={styles.userName}>{userNameValue}</span>
-                        <div className="button__delimiter"></div>
+                    <Link to={link} className="button button--cart">
                         <img src={userIcon} className={styles.userIcon} alt=""/>
                     </Link>
                 </div>

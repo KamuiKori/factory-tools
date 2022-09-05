@@ -12,6 +12,7 @@ import Home from "./pages/home";
 import NotFoundBlock from "./Components/NotFoundBlock";
 import Profile from "./Components/Profile";
 import React from "react";
+import Login from "./Components/Login/Login";
 import {store} from './redux/store'
 
 export const SearchContext = React.createContext('')
@@ -28,6 +29,7 @@ function App() {
                                 <Route path="/" element={<Home/>}/>
                                 <Route path="/profile" element={<Profile/>}/>
                                 <Route path="*" element={<NotFoundBlock/>}/>
+                                <Route path="/login" element={<Login/>}/>
                             </Routes>
                         </div>
                     </div>

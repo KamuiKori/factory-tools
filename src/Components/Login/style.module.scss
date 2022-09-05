@@ -1,0 +1,45 @@
+.root{
+  text-align: center;
+}
+.title{
+  margin-bottom: 30px;
+}
+.loginWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.authForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+}
+.btn_submit{
+  width: 100%;
+  background: #66a4e2;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  height: 45px;
+  margin-top: 10px;
+}
+.formInput{
+  height: 45px;
+  border-radius: 15px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: none;
+  background: #666;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  &::placeholder{
+    color: #fff;
+  }
+}

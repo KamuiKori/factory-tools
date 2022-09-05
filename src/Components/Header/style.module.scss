@@ -3,5 +3,11 @@
     font-weight: 700;
 }
 .userIcon{
-    max-width: 20px;
+    max-width: 25px;
+}
+.button--profile{
+    display: flex;
+    align-items: center;
+    line-height: 23px;
+    padding: 12px 25px;
 }

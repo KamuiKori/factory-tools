@@ -2,13 +2,13 @@ import React from "react";
 import styles from "./style.module.scss"
 import userPhoto from "./../../assets/img/userIcon.png"
 
-const Profile = ()=>{
+const Profile = () => {
     let userName = "Человек";
     let position = "Оператор ЧПУ";
     let workshop = "2";
     let area = "1";
     let gang = "1";
-    return(
+    return (
         <>
             <h1>Профиль</h1>
             <div className={styles.profileContent}>
