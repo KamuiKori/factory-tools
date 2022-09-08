@@ -1,0 +1,32 @@
+[
+  {
+    "id": "0",
+    "email": "test@mail.ru",
+    "password": "Asdfg123",
+    "name": "Oleg",
+    "position": "master",
+    "workShop": "2",
+    "area": "1",
+    "gang":"1"
+  },
+  {
+    "id": "1",
+    "email": "test123@mail.ru",
+    "password": "DsgfSda231",
+    "name": "Sergey",
+    "position": "operator",
+    "workShop": "2",
+    "area": "3",
+    "gang":"2"
+  },
+  {
+    "id": "2",
+    "email": "1",
+    "password": "1",
+    "name": "Dmitriy",
+    "position": "operator",
+    "workShop": "4",
+    "area": "3",
+    "gang":"1"
+  }
+]

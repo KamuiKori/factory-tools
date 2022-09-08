@@ -15,9 +15,10 @@ import React from "react";
 import Login from "./Components/Login/Login";
 import {store} from './redux/store'
 
-export const SearchContext = React.createContext('')
+export const SearchContext = React.createContext('');
 function App() {
-    const [searchValue, setSearchValue] = React.useState("")
+    const [searchValue, setSearchValue] = React.useState("");
+    const [userObj, setUserObj] = React.useState({});
     return (
         <SearchContext.Provider value={{searchValue,setSearchValue}}>
             <div className="App">
@@ -27,9 +28,9 @@ function App() {
                         <div className="container">
                             <Routes>
                                 <Route path="/" element={<Home/>}/>
-                                <Route path="/profile" element={<Profile/>}/>
+                                <Route path="/profile/*" element={<Profile userObj={userObj}/>}/>
                                 <Route path="*" element={<NotFoundBlock/>}/>
-                                <Route path="/login" element={<Login/>}/>
+                                <Route path="/login" element={<Login userObj={userObj} setUserObj={setUserObj}/>}/>
                             </Routes>
                         </div>
                     </div>

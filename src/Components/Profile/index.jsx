@@ -1,13 +1,16 @@
 import React from "react";
 import styles from "./style.module.scss"
 import userPhoto from "./../../assets/img/userIcon.png"
+import {useSelector} from "react-redux";
 
 const Profile = () => {
-    let userName = "Человек";
-    let position = "Оператор ЧПУ";
-    let workshop = "2";
-    let area = "1";
-    let gang = "1";
+
+    const name = useSelector(state => state.profile.name);
+    const position = useSelector(state => state.profile.position);
+    const workshop = useSelector(state => state.profile.workShop);
+    const area = useSelector(state => state.profile.area);
+    const gang = useSelector(state => state.profile.gang);
+
     return (
         <>
             <h1>Профиль</h1>
@@ -16,7 +19,7 @@ const Profile = () => {
                     <img src={userPhoto} alt=""/>
                 </div>
                 <div className={styles.description}>
-                    <div className={styles.userName}><span>Имя:</span>{userName}</div>
+                    <div className={styles.userName}><span>Имя:</span>{name}</div>
                     <div className={styles.position}><span>Должность:</span>{position}</div>
                     <div className={styles.workShop}><span>Цех:</span>{workshop}</div>
                     <div className={styles.area}><span>Участок:</span>{area}</div>

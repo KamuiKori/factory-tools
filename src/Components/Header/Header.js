@@ -7,7 +7,7 @@ import Search from "../Search";
 
 function Header() {
     var link = "";
-    if(localStorage.getItem("logged") === "true"){
+    if(localStorage.getItem("isLogged") === "true"){
         link = "/profile"
     }
     else{
