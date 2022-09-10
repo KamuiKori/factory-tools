@@ -16,6 +16,16 @@ const Login = () => {
     if(isValid){
         return <Navigate to={`/profile/${userId}`}/>
     }
+    function setUserData(user){
+        localStorage.setItem("user",JSON.stringify({
+            "id":user.id,
+            "position":user.position,
+            "workshop":user.workShop,
+            "area":user.area,
+            "gang":user.gang,
+            "name":user.name
+        }))
+    }
     function sendRequest(){
         axios.get(`https://62fd111fb9e38585cd4c19a9.mockapi.io/users/?email=` + emailValue)
             .then((response) => {
@@ -29,6 +39,7 @@ const Login = () => {
                             dispatch(setWorkshop(user.workShop));
                             dispatch(setArea(user.area));
                             dispatch(setGang(user.gang));
+                            setUserData(user);
                             setUserId(user.id);
                             console.log("Логин прошел");
                             localStorage.setItem("isLogged","true");

@@ -14,6 +14,7 @@ import Profile from "./Components/Profile";
 import React from "react";
 import Login from "./Components/Login/Login";
 import {store} from './redux/store'
+import ItemPage from "./pages/ItemPage"
 
 export const SearchContext = React.createContext('');
 function App() {
@@ -31,6 +32,7 @@ function App() {
                                 <Route path="/profile/*" element={<Profile userObj={userObj}/>}/>
                                 <Route path="*" element={<NotFoundBlock/>}/>
                                 <Route path="/login" element={<Login userObj={userObj} setUserObj={setUserObj}/>}/>
+                                <Route path="/item/*" element={<ItemPage/>}/>
                             </Routes>
                         </div>
                     </div>

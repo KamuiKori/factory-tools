@@ -11,6 +11,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setCategoryId} from "../redux/slices/filterSlice";
 import axios from "axios";
 import {setCurrentPage, setFilters} from "../redux/slices/filterSlice";
+import {setSelectedId} from "../redux/slices/itemSlice";
 import qs from "qs"
 import { useNavigate } from "react-router-dom"
 
@@ -31,7 +32,7 @@ const Home = () => {
     const [items, setItems] = React.useState([]);
 
 
-    const search = searchValue ? `&search=${searchValue}` : '';
+    const search = searchValue ? `&q=${searchValue}` : '';
     const tools = items.map((items) => (
         <ItemBlock key={items.id} {...items}/>
     ))
@@ -47,7 +48,7 @@ const Home = () => {
         }
         let requestNameCategory = requestNamesCategory[categoryId];
 
-        axios.get(`https://62fd111fb9e38585cd4c19a9.mockapi.io/items?page=${currentPage}&limit=4&` + requestNameCategory + `&sortBy=${sort}&order=desc` + search)
+        axios.get(`http://localhost:3000/items/?_page=${currentPage}&_limit=4&` + requestNameCategory + `&_sort=${sort}&_order=desc` + search)
             .then((response) => {
                 setItems(response.data);
             })
@@ -90,6 +91,7 @@ const Home = () => {
 
     const onChangePage = (number) => {
         dispatch(setCurrentPage(number));
+        console.log(number)
     }
 
     return (
