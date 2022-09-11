@@ -14,3 +14,17 @@
     display: flex;
     justify-content: space-between;
 }
+.ItemsInWork{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    img{
+        max-width: 50px;
+        margin-right: 30px;
+    }
+}
+.itemInWork{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #666;
+}

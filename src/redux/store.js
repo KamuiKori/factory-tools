@@ -1,26 +1,22 @@
-import {combineReducers, configureStore, createStore} from '@reduxjs/toolkit'
+import { configureStore} from '@reduxjs/toolkit'
 import filter from "./slices/filterSlice";
 import profile from "./slices/profileSlice";
 import item from "./slices/itemSlice"
-import { persistStore, persistReducer } from 'redux-persist'
+import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-
-const rootReducer = combineReducers({
-    filter,
-    profile,
-    item
-})
 
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist:["profile"]
 }
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedProfileReducer = persistReducer(persistConfig, profile)
 
 export const store = configureStore({
-    reducer:persistedReducer,
-
+    reducer: {
+        filter,
+        item,
+        profile: persistedProfileReducer
+    },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: false,

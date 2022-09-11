@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {}
+const initialState = {
+    user:null
+}
 
 
 export const profileSlice = createSlice({
@@ -8,34 +10,14 @@ export const profileSlice = createSlice({
     initialState,
     reducers: {
         addItem(state, action){
-            state.items.push(action.payload);
+            state.user.items.push(action.payload);
         },
         removeItem(state,action){
-            state.items.filter(obj =>obj.id !== action.payload)
+            state.user.items.filter(obj =>obj.id !== action.payload)
         },
         setUser(state,action){
-            state = action.payload
+            state.user = action.payload
         },
-        setId(state,action){
-            state.id = action.payload;
-        },
-        setName(state,action){
-            state.name = action.payload;
-        },
-        setPos(state,action){
-            state.position = action.payload;
-        },
-        setWorkshop(state,action){
-            state.workShop = action.payload;
-        },
-        setArea(state,action){
-            state.area = action.payload;
-        },
-        setGang(state,action){
-            state.gang = action.payload;
-        },
-
-
     },
 })
 

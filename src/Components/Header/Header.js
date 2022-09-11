@@ -7,8 +7,8 @@ import Search from "../Search";
 import {useSelector} from "react-redux";
 
 function Header() {
-    let user = useSelector(state => state.profile);
-    var link = user.id?"/profile":"/login";
+    let user = useSelector(state => state.profile.user);
+    var link = user?.id?"/profile":"/login";
     return (
         <div className="header">
             <div className="container">

@@ -4,13 +4,15 @@ import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import {setTitle} from "../../redux/slices/itemSlice";
 import {setUser} from "../../redux/slices/profileSlice";
+import styles from "../Profile/style.module.scss";
 
 const ItemFull = (props) => {
 
     let itemId = useSelector(state => state.item.selectedId);
     let title = useSelector(state => state.item.selectedId);
-    const user = useSelector(state => state.profile);
-    const dispatch  = useDispatch();
+    const user = useSelector(state => state.profile.user);
+    const dispatch = useDispatch();
+    const [usersWithItem, setUsersWithItem] = React.useState([]);
 
     if (itemId === 0) {
         // eslint-disable-next-line no-restricted-globals
@@ -18,38 +20,49 @@ const ItemFull = (props) => {
     }
     const [item, setItem] = React.useState({});
 
-    React.useEffect(()=>{
+    React.useEffect(() => {
         makeRequest();
-    },[])
+    }, [])
 
-    function makeRequest(){
-        axios(`http://localhost:3000/items/?id=${itemId}`)
+    React.useEffect(() => {
+        sortUsers();
+    }, [item])
+
+    function makeRequest() {
+        axios(`http://localhost:3000/items/${itemId}`)
             .then((response) => {
-                if (response.data.length > 0) {
-                    response.data.forEach(function (item) {
-                        if (item.id === itemId) {
-                            setItem(item)
-                        }
-                    })
-                }
+                    setItem(response.data)
             })
     }
 
-    function takeItemToWork(){
-        if(localStorage.getItem("isLogged")){
-            if(item.count != 0){
-                axios.patch(`http://localhost:3000/items/${itemId}`,{count:item.count-1})
-                    .then((response)=>{
+    function takeItemToWork() {
+        if (localStorage.getItem("isLogged")) {
+            if (item.count != 0) {
+                axios.patch(`http://localhost:3000/items/${itemId}`, {count: item.count - 1})
+                    .then((response) => {
                         setItem(response.data)
                     })
                 const itemsInWork = [...user.itemsInWork];
                 itemsInWork.push(item);
-                axios.patch(`http://localhost:3000/users/${user.id}`,{itemsInWork})
-                    .then((response)=>{
+                axios.patch(`http://localhost:3000/users/${user.id}`, {itemsInWork})
+                    .then((response) => {
                         dispatch(setUser(response.data))
                     })
+
             }
         }
+    }
+
+    function sortUsers() {
+        axios.get(`http://localhost:3000/users/`)
+            .then((response) => {
+                const usersWithItem = response.data.filter((user) => {
+                    return user.itemsInWork.some(tool => tool.id === item.id);
+                })
+                console.log(item.id)
+                console.log(usersWithItem)
+                setUsersWithItem(usersWithItem)
+            })
     }
 
 
@@ -92,10 +105,20 @@ const ItemFull = (props) => {
                             <p className={style.string_title}>Количество:</p>
                             <p className={style.item_types}>{item.count}</p>
                         </div>
+                        <div className={style.descr_string}>
+                            <p className={style.string_title}>На руках у:</p>
+                            {
+                                usersWithItem?.map((user, index) => {
+                                    return (<span key={`${user.id}_${index}`}
+                                                  className={styles.userWithItem}>{user.name}<br/></span>)
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
-            <button className={style.btn_take} onClick={takeItemToWork}>Взять в работу</button>
+            <button className={style.btn_take} onClick={takeItemToWork} disabled={item.count == 0}>Взять в работу
+            </button>
         </div>
     )
 }

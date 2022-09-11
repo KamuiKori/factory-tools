@@ -1,19 +1,22 @@
 import React from "react";
 import styles from "./style.module.scss"
 import userPhoto from "./../../assets/img/userIcon.png"
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Navigate} from "react-router-dom";
+import {setUser} from "../../redux/slices/profileSlice";
 
 const Profile = () => {
 
     const [isExit,setIsExit]= React.useState(false);
-    let user = useSelector(state => state.profile);
+    let user = useSelector(state => state.profile.user);
+    const dispatch = useDispatch();
 
     if(isExit){
         return <Navigate to={`/`}/>
     }
 
     function Exit(){
+        dispatch(setUser({}))
         setIsExit(true);
         localStorage.removeItem("user");
         localStorage.removeItem("userId");
@@ -36,10 +39,10 @@ const Profile = () => {
                     <div className={styles.workShop}><span>Цех:</span>{user.workshop}</div>
                     <div className={styles.area}><span>Участок:</span>{user.area}</div>
                     <div className={styles.gang}><span>Смена:</span>{user.gang}</div>
-                    <div className={styles.ItemsInWork}><span>Смена:</span>
+                    <div className={styles.ItemsInWork}><span>Инструменты в работе:</span>
                         {
-                            user.itemsInWork?.map(item => {
-                                return (<span>item{item.name}</span>)
+                            user.itemsInWork?.map((item,index) => {
+                                return (<span key={`${item.id}_${index}`}className={styles.itemInWork}><img src={item.imageUrl} alt="" />{item.title}<br/></span>)
                             })
                         }
                     </div>

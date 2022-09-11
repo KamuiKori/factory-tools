@@ -16,7 +16,8 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 6
+      "count": 4,
+      "takedUserName": []
     },
     {
       "id": 1,
@@ -34,7 +35,8 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 0
+      "count": 0,
+      "takedUserName": []
     },
     {
       "id": 2,
@@ -52,7 +54,8 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 0
+      "count": 0,
+      "takedUserName": []
     },
     {
       "id": 3,
@@ -69,7 +72,8 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 1
+      "count": 1,
+      "takedUserName": []
     },
     {
       "id": 4,
@@ -86,7 +90,8 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 5
+      "count": 5,
+      "takedUserName": []
     },
     {
       "id": 5,
@@ -103,7 +108,8 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 8
+      "count": 4,
+      "takedUserName": []
     },
     {
       "id": 6,
@@ -120,7 +126,8 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 4
+      "count": 1,
+      "takedUserName": []
     },
     {
       "id": 7,
@@ -137,7 +144,8 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 6
+      "count": 4,
+      "takedUserName": []
     },
     {
       "id": 8,
@@ -154,7 +162,8 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 3
+      "count": 3,
+      "takedUserName": []
     },
     {
       "id": 9,
@@ -171,7 +180,8 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 7
+      "count": 5,
+      "takedUserName": []
     },
     {
       "id": 10,
@@ -188,7 +198,8 @@
       "Режущий": "Да",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 0
+      "count": 0,
+      "takedUserName": []
     },
     {
       "id": 11,
@@ -205,7 +216,8 @@
       "Режущий": "Нет",
       "Оснастка": "Да",
       "Вспомогательный": "Нет",
-      "count": 1
+      "count": 1,
+      "takedUserName": []
     },
     {
       "id": 12,
@@ -222,7 +234,8 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Да",
-      "count": 1
+      "count": 1,
+      "takedUserName": []
     }
   ],
   "users": [
@@ -257,7 +270,112 @@
       "workShop": "4",
       "area": "3",
       "gang": "1",
-      "itemsInWork": []
+      "itemsInWork": [
+        {
+          "id": 9,
+          "imageUrl": "https://cdn.vseinstrumenti.ru/images/goods/ruchnoy-instrument/izmeritelnyj/1065893/2400x1600/52191299.jpg",
+          "title": "150 мм Gigant DCPR-150",
+          "types": "цифровой",
+          "range": "0-150",
+          "manufacturer": "китай",
+          "depthometer": "да",
+          "errorRange": "30 мкм",
+          "batteries": "LR44",
+          "available": "Да",
+          "Мерительный": "Да",
+          "Режущий": "Нет",
+          "Оснастка": "Нет",
+          "Вспомогательный": "Нет",
+          "count": 7
+        },
+        {
+          "id": 9,
+          "imageUrl": "https://cdn.vseinstrumenti.ru/images/goods/ruchnoy-instrument/izmeritelnyj/1065893/2400x1600/52191299.jpg",
+          "title": "150 мм Gigant DCPR-150",
+          "types": "цифровой",
+          "range": "0-150",
+          "manufacturer": "китай",
+          "depthometer": "да",
+          "errorRange": "30 мкм",
+          "batteries": "LR44",
+          "available": "Да",
+          "Мерительный": "Да",
+          "Режущий": "Нет",
+          "Оснастка": "Нет",
+          "Вспомогательный": "Нет",
+          "count": 6
+        },
+        {
+          "id": 7,
+          "imageUrl": "https://cdn.vseinstrumenti.ru/images/goods/ruchnoy-instrument/izmeritelnyj/1065893/2400x1600/52191299.jpg",
+          "title": "150 мм Gigant DCPR-150",
+          "types": "цифровой",
+          "range": "0-150",
+          "manufacturer": "китай",
+          "depthometer": "да",
+          "errorRange": "30 мкм",
+          "batteries": "LR44",
+          "available": "Да",
+          "Мерительный": "Да",
+          "Режущий": "Нет",
+          "Оснастка": "Нет",
+          "Вспомогательный": "Нет",
+          "count": 5
+        },
+        {
+          "id": 5,
+          "imageUrl": "https://cdn.vseinstrumenti.ru/images/goods/ruchnoy-instrument/izmeritelnyj/1065893/2400x1600/52191299.jpg",
+          "title": "150 мм Gigant DCPR-150",
+          "types": "цифровой",
+          "range": "0-150",
+          "manufacturer": "китай",
+          "depthometer": "да",
+          "errorRange": "30 мкм",
+          "batteries": "LR44",
+          "available": "Да",
+          "Мерительный": "Да",
+          "Режущий": "Нет",
+          "Оснастка": "Нет",
+          "Вспомогательный": "Нет",
+          "count": 8
+        },
+        {
+          "id": 5,
+          "imageUrl": "https://cdn.vseinstrumenti.ru/images/goods/ruchnoy-instrument/izmeritelnyj/1065893/2400x1600/52191299.jpg",
+          "title": "150 мм Gigant DCPR-150",
+          "types": "цифровой",
+          "range": "0-150",
+          "manufacturer": "китай",
+          "depthometer": "да",
+          "errorRange": "30 мкм",
+          "batteries": "LR44",
+          "available": "Да",
+          "Мерительный": "Да",
+          "Режущий": "Нет",
+          "Оснастка": "Нет",
+          "Вспомогательный": "Нет",
+          "count": 7,
+          "takedUserName": []
+        },
+        {
+          "id": 5,
+          "imageUrl": "https://cdn.vseinstrumenti.ru/images/goods/ruchnoy-instrument/izmeritelnyj/1065893/2400x1600/52191299.jpg",
+          "title": "150 мм Gigant DCPR-150",
+          "types": "цифровой",
+          "range": "0-150",
+          "manufacturer": "китай",
+          "depthometer": "да",
+          "errorRange": "30 мкм",
+          "batteries": "LR44",
+          "available": "Да",
+          "Мерительный": "Да",
+          "Режущий": "Нет",
+          "Оснастка": "Нет",
+          "Вспомогательный": "Нет",
+          "count": 5,
+          "takedUserName": []
+        }
+      ]
     }
   ]
 }
