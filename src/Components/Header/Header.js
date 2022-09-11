@@ -4,15 +4,11 @@ import userIcon from "../../assets/img/userIcon.png"
 import {Link} from "react-router-dom";
 import styles from './style.module.scss'
 import Search from "../Search";
+import {useSelector} from "react-redux";
 
 function Header() {
-    var link = "";
-    if(localStorage.getItem("isLogged") === "true"){
-        link = "/profile"
-    }
-    else{
-        link = "/login"
-    }
+    let user = useSelector(state => state.profile);
+    var link = user.id?"/profile":"/login";
     return (
         <div className="header">
             <div className="container">

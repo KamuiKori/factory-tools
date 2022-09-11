@@ -1,14 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
-    id:"",
-    items:[],
-    name:"",
-    position:"",
-    workShop:"",
-    area:"",
-    gang:""
-}
+const initialState = {}
+
 
 export const profileSlice = createSlice({
     name: 'profile',
@@ -19,6 +12,9 @@ export const profileSlice = createSlice({
         },
         removeItem(state,action){
             state.items.filter(obj =>obj.id !== action.payload)
+        },
+        setUser(state,action){
+            state = action.payload
         },
         setId(state,action){
             state.id = action.payload;
@@ -44,6 +40,6 @@ export const profileSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const {addItem,removeItem, setName,setPos,setWorkshop,setArea,setGang,setId} = profileSlice.actions
+export const {addItem,removeItem,setUser} = profileSlice.actions
 
 export default profileSlice.reducer

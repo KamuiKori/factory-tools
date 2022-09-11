@@ -4,7 +4,7 @@ import axios from "axios";
 import { Route} from "react-router-dom";
 import { Navigate } from 'react-router-dom';
 import {useSelector, useDispatch} from "react-redux";
-import {setId, setName,setPos,setWorkshop,setArea,setGang} from "../../redux/slices/profileSlice";
+import {setId, setName,setPos,setWorkshop,setArea,setGang, setUser} from "../../redux/slices/profileSlice";
 
 const Login = () => {
     const [emailValue, setEmailValue] = React.useState('');
@@ -16,34 +16,17 @@ const Login = () => {
     if(isValid){
         return <Navigate to={`/profile/${userId}`}/>
     }
-    function setUserData(user){
-        localStorage.setItem("user",JSON.stringify({
-            "id":user.id,
-            "position":user.position,
-            "workshop":user.workShop,
-            "area":user.area,
-            "gang":user.gang,
-            "name":user.name
-        }))
-    }
     function sendRequest(){
-        axios.get(`https://62fd111fb9e38585cd4c19a9.mockapi.io/users/?email=` + emailValue)
+        axios.get(`http://localhost:3000/users/?email=` + emailValue)
             .then((response) => {
                 if(response.data.length > 0){
                     response.data.forEach(function (user){
                         if(user.email === emailValue && user.password === passValue){
-                            setIsValid(true);
-                            dispatch(setId(user.id));
-                            dispatch(setName(user.name));
-                            dispatch(setPos(user.position));
-                            dispatch(setWorkshop(user.workShop));
-                            dispatch(setArea(user.area));
-                            dispatch(setGang(user.gang));
-                            setUserData(user);
+                            dispatch(setUser(user))
                             setUserId(user.id);
                             console.log("Логин прошел");
                             localStorage.setItem("isLogged","true");
-                            localStorage.setItem("userId",user.id);
+                            setIsValid(true);
                         }
                     })
                 }

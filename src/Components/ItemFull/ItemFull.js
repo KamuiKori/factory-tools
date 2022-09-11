@@ -1,13 +1,16 @@
 import React from "react";
 import style from "./style.module.scss"
 import axios from "axios";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {setTitle} from "../../redux/slices/itemSlice";
+import {setUser} from "../../redux/slices/profileSlice";
 
 const ItemFull = (props) => {
 
     let itemId = useSelector(state => state.item.selectedId);
     let title = useSelector(state => state.item.selectedId);
+    const user = useSelector(state => state.profile);
+    const dispatch  = useDispatch();
 
     if (itemId === 0) {
         // eslint-disable-next-line no-restricted-globals
@@ -30,6 +33,23 @@ const ItemFull = (props) => {
                     })
                 }
             })
+    }
+
+    function takeItemToWork(){
+        if(localStorage.getItem("isLogged")){
+            if(item.count != 0){
+                axios.patch(`http://localhost:3000/items/${itemId}`,{count:item.count-1})
+                    .then((response)=>{
+                        setItem(response.data)
+                    })
+                const itemsInWork = [...user.itemsInWork];
+                itemsInWork.push(item);
+                axios.patch(`http://localhost:3000/users/${user.id}`,{itemsInWork})
+                    .then((response)=>{
+                        dispatch(setUser(response.data))
+                    })
+            }
+        }
     }
 
 
@@ -75,7 +95,7 @@ const ItemFull = (props) => {
                     </div>
                 </div>
             </div>
-            <button className={style.btn_take}>Взять в работу</button>
+            <button className={style.btn_take} onClick={takeItemToWork}>Взять в работу</button>
         </div>
     )
 }

@@ -34,7 +34,7 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 2
+      "count": 0
     },
     {
       "id": 2,
@@ -188,7 +188,7 @@
       "Режущий": "Да",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 4
+      "count": 0
     },
     {
       "id": 11,
@@ -223,6 +223,41 @@
       "Оснастка": "Нет",
       "Вспомогательный": "Да",
       "count": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "0",
+      "email": "test@mail.ru",
+      "password": "Asdfg123",
+      "name": "Oleg",
+      "position": "master",
+      "workShop": "2",
+      "area": "1",
+      "gang": "1",
+      "itemsInWork": []
+    },
+    {
+      "id": "1",
+      "email": "test123@mail.ru",
+      "password": "DsgfSda231",
+      "name": "Sergey",
+      "position": "operator",
+      "workShop": "2",
+      "area": "3",
+      "gang": "2",
+      "itemsInWork": []
+    },
+    {
+      "id": "2",
+      "email": "1",
+      "password": "1",
+      "name": "Dmitriy",
+      "position": "operator",
+      "workShop": "4",
+      "area": "3",
+      "gang": "1",
+      "itemsInWork": []
     }
   ]
 }

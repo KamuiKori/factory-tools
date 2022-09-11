@@ -7,6 +7,7 @@ import {Navigate} from "react-router-dom";
 const Profile = () => {
 
     const [isExit,setIsExit]= React.useState(false);
+    let user = useSelector(state => state.profile);
 
     if(isExit){
         return <Navigate to={`/`}/>
@@ -20,13 +21,6 @@ const Profile = () => {
 
     }
 
-    const user = JSON.parse(localStorage.getItem("user"))
-    const name = user.name;
-    const position = user.position;
-    const workshop = user.workshop;
-    const area = user.area
-    const gang = user.gang
-
 
 
     return (
@@ -37,11 +31,18 @@ const Profile = () => {
                     <img src={userPhoto} alt=""/>
                 </div>
                 <div className={styles.description}>
-                    <div className={styles.userName}><span>Имя:</span>{name}</div>
-                    <div className={styles.position}><span>Должность:</span>{position}</div>
-                    <div className={styles.workShop}><span>Цех:</span>{workshop}</div>
-                    <div className={styles.area}><span>Участок:</span>{area}</div>
-                    <div className={styles.gang}><span>Смена:</span>{gang}</div>
+                    <div className={styles.userName}><span>Имя:</span>{user.name}</div>
+                    <div className={styles.position}><span>Должность:</span>{user.position}</div>
+                    <div className={styles.workShop}><span>Цех:</span>{user.workshop}</div>
+                    <div className={styles.area}><span>Участок:</span>{user.area}</div>
+                    <div className={styles.gang}><span>Смена:</span>{user.gang}</div>
+                    <div className={styles.ItemsInWork}><span>Смена:</span>
+                        {
+                            user.itemsInWork?.map(item => {
+                                return (<span>item{item.name}</span>)
+                            })
+                        }
+                    </div>
                 </div>
             </div>
             <div className={styles.activeTools}>
