@@ -13,7 +13,7 @@ export const profileSlice = createSlice({
             state.user.items.push(action.payload);
         },
         removeItem(state,action){
-            state.user.items.filter(obj =>obj.id !== action.payload)
+            state.user.itemsInWork.filter(obj =>obj.id !== action.payload)
         },
         setUser(state,action){
             state.user = action.payload

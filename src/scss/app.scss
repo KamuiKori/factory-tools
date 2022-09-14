@@ -14,6 +14,10 @@ body {
   margin: 50px auto;
   border-radius: 10px;
   max-width: 1400px;
+  @media (max-width: 500px){
+    width: 350px;
+    margin: 20px auto;
+  }
 }
 
 .content {
@@ -21,12 +25,21 @@ body {
 
   &__title {
     margin: 35px 0;
+    @media(max-width: 500px){
+      text-align: center;
+    }
   }
 
   &__items {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @media (max-width: 500px){
+      justify-content: center;
+      a{
+        margin-bottom: 30px;
+      }
+    }
   }
 
   &__top {
@@ -56,6 +69,7 @@ body {
     margin: 90px auto;
     .content__title {
       margin: 0;
+
     }
   }
 }

@@ -36,7 +36,7 @@ const ItemFull = (props) => {
     }
 
     function takeItemToWork() {
-        if (localStorage.getItem("isLogged")) {
+        if (localStorage.getItem("isLogged")==="true") {
             if (item.count != 0) {
                 axios.patch(`http://localhost:3000/items/${itemId}`, {count: item.count - 1})
                     .then((response) => {
@@ -59,8 +59,6 @@ const ItemFull = (props) => {
                 const usersWithItem = response.data.filter((user) => {
                     return user.itemsInWork.some(tool => tool.id === item.id);
                 })
-                console.log(item.id)
-                console.log(usersWithItem)
                 setUsersWithItem(usersWithItem)
             })
     }
@@ -107,17 +105,19 @@ const ItemFull = (props) => {
                         </div>
                         <div className={style.descr_string}>
                             <p className={style.string_title}>На руках у:</p>
-                            {
-                                usersWithItem?.map((user, index) => {
-                                    return (<span key={`${user.id}_${index}`}
-                                                  className={styles.userWithItem}>{user.name}<br/></span>)
-                                })
-                            }
+                            <div className={style.usersWithItems}>
+                                {
+                                    usersWithItem?.map((user, index) => {
+                                        return (<span key={`${user.id}_${index}`}
+                                                      className={styles.userWithItem}>{user.name}<br/></span>)
+                                    })
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <button className={style.btn_take} onClick={takeItemToWork} disabled={item.count == 0}>Взять в работу
+            <button className={style.btn_take} onClick={takeItemToWork} disabled={item.count == 0 || localStorage.getItem("isLogged")==="false"}>Взять в работу
             </button>
         </div>
     )

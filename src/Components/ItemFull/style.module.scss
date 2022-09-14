@@ -13,6 +13,9 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  @media(max-width: 500px){
+    flex-direction: column;
+  }
 }
 .specs{
   max-width: 500px;
@@ -27,6 +30,12 @@
 }
 .item_name{
   font-size: 30px;
+}
+.usersWithItems{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 .wrapper{
   display: flex;
@@ -47,5 +56,10 @@
   &:disabled{
     opacity: .6;
     cursor: not-allowed;
+  }
+}
+@media (max-width: 500px){
+  .item_img{
+    max-width: 300px;
   }
 }

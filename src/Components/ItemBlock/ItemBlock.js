@@ -31,8 +31,8 @@ function ItemBlock(props) {
                     src={props.imageUrl}
                     alt="item"
                 />
-                <h4 className="item-block__title">{props.title}</h4>
                 <div className="item-block__spec">
+                    <h4 className="item-block__title">{props.title}</h4>
                     <div className="type"><p>Тип:</p> {props.types}</div>
                     <div className="range"><p>Диапозон:</p> {props.range}</div>
                     <div className="manufacturer"><p>Производитель:</p> {props.manufacturer}</div>

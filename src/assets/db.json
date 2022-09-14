@@ -16,7 +16,7 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 4,
+      "count": 7,
       "takedUserName": []
     },
     {
@@ -90,7 +90,7 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 5,
+      "count": 1,
       "takedUserName": []
     },
     {
@@ -108,7 +108,7 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 4,
+      "count": 2,
       "takedUserName": []
     },
     {
@@ -144,7 +144,7 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 4,
+      "count": 12,
       "takedUserName": []
     },
     {
@@ -162,7 +162,7 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 3,
+      "count": 2,
       "takedUserName": []
     },
     {
@@ -180,7 +180,7 @@
       "Режущий": "Нет",
       "Оснастка": "Нет",
       "Вспомогательный": "Нет",
-      "count": 5,
+      "count": 7,
       "takedUserName": []
     },
     {
@@ -216,7 +216,7 @@
       "Режущий": "Нет",
       "Оснастка": "Да",
       "Вспомогательный": "Нет",
-      "count": 1,
+      "count": 0,
       "takedUserName": []
     },
     {
@@ -248,6 +248,7 @@
       "workShop": "2",
       "area": "1",
       "gang": "1",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png",
       "itemsInWork": []
     },
     {
@@ -259,6 +260,7 @@
       "workShop": "2",
       "area": "3",
       "gang": "2",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png",
       "itemsInWork": []
     },
     {
@@ -270,6 +272,7 @@
       "workShop": "4",
       "area": "3",
       "gang": "1",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png",
       "itemsInWork": [
         {
           "id": 9,
@@ -373,6 +376,56 @@
           "Оснастка": "Нет",
           "Вспомогательный": "Нет",
           "count": 5,
+          "takedUserName": []
+        },
+        {
+          "id": 11,
+          "imageUrl": "https://tme-osnastka.ru/images/detailed/13/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2021-06-07_%D0%B2_19.14.03.png",
+          "title": "Токарный патрон HS-08 200 мм (8), 3-х кулачковый 1,5mm x 60°",
+          "types": "",
+          "range": "0-150",
+          "manufacturer": "китай",
+          "depthometer": "",
+          "errorRange": "",
+          "batteries": "",
+          "available": "Да",
+          "Мерительный": "Нет",
+          "Режущий": "Нет",
+          "Оснастка": "Да",
+          "Вспомогательный": "Нет",
+          "count": 1,
+          "takedUserName": []
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "email": "5",
+      "password": "5",
+      "name": "Ivan",
+      "position": "operator",
+      "workShop": "3",
+      "area": "21",
+      "gang": "1",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png",
+      "itemsInWork": [
+        {
+          "id": 0,
+          "imageUrl": "https://cdn.vseinstrumenti.ru/images/goods/ruchnoy-instrument/izmeritelnyj/1065893/2400x1600/52191299.jpg",
+          "title": "150 мм Gigant DCPR-150",
+          "types": "цифровой",
+          "range": "0-150",
+          "manufacturer": "китай",
+          "depthometer": "да",
+          "step": "0,01",
+          "errorRange": "30 мкм",
+          "batteries": "LR44",
+          "available": "Да",
+          "Мерительный": "Да",
+          "Режущий": "Нет",
+          "Оснастка": "Нет",
+          "Вспомогательный": "Нет",
+          "count": 8,
           "takedUserName": []
         }
       ]

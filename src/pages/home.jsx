@@ -91,7 +91,6 @@ const Home = () => {
 
     const onChangePage = (number) => {
         dispatch(setCurrentPage(number));
-        console.log(number)
     }
 
     return (
